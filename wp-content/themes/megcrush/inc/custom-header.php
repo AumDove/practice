@@ -44,9 +44,14 @@ function megcrush_custom_header_setup() {
                         'thumbnail_url' => get_template_directory_uri() . '/img/vegas.jpg',
                         'description'   => __( 'Blue Man Vegas', 'megcrush' )
                 ),
+                'grafitti' => array(
+                        'url'           => get_template_directory_uri() . '/img/twin-falls-grafitti.jpg',
+                        'thumbnail_url' => get_template_directory_uri() . '/img/twin-falls-grafitti.jpg',
+                        'description'   => __( 'Blue Man Vegas', 'megcrush' )
+                ),
         ) );
 	add_theme_support( 'custom-header', apply_filters( 'megcrush_custom_header_args', array(
-            'default-image'          => get_template_directory_uri() . '/img/maui-upcountry.jpg', '/img/hookipa-bird.jpg', '/img/vegas.jpg', // add the default image options from above function separated 
+            'default-image'          => get_template_directory_uri() . '/img/maui-upcountry.jpg', '/img/hookipa-bird.jpg', '/img/vegas.jpg', '/img/twin-falls-grafitti.jpg',// add the default image options from above function separated 
             'default-text-color'     => 'ffffff',
             'width'                  => 1600,
             'height'                 => 500,

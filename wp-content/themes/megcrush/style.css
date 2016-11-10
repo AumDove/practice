@@ -1296,7 +1296,7 @@ object {
             }
             
             .main-navigation a,
-/           .main-navigation ul ul li:last-child a {
+            .main-navigation ul ul li:last-child a {
                     border-bottom: none;
             }
             
