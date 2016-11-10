@@ -999,7 +999,7 @@ object {
              right: 5em;*/
          }
          button.menu-toggle {
-             font-size: 7em;
+             font-size: 1.25em;
          }
          /* LOGO */
          .site-logo a {
@@ -1354,3 +1354,14 @@ object {
     /*END ALL MENU STYLES */
     /******************************/
 
+    /*BEGIN BLOG CONTENT STYLES*/
+    
+ .entry-title {
+	margin-top: 2em;
+	margin-bottom: 1em;
+	font-size: 2em;
+	line-height: 1.3em;
+	text-align: center;
+	color: #000;
+	word-wrap: break-word; /* Catch and wrap very long words on small screens */
+}
