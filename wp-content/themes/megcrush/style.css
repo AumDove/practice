@@ -51,6 +51,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     ## Asides
     ## Comments
     ## Images
+    ## Galleries
+    ## Footer
 ## Menus
 ## 
 --------------------------------------------------------------*/
@@ -884,61 +886,9 @@ object {
     max-width: 100%;
 }
 
-
-
-
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
-.gallery {
-    margin-bottom: 1.5em;
-}
-
-.gallery-item {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-    max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-    max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-    max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-    max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-    max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-    max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-    max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-    max-width: 11.11%;
-}
-
-.gallery-caption {
-    display: block;
-}
-/*******************************/
+/**************************************************************************/
 /*## Phone Styles (breakpoints)*/
-/*******************************/
+/**************************************************************************/
 
 @media screen and (min-width: 300px){
     /*-------------------------------
@@ -1627,6 +1577,101 @@ object {
     .featured-image a:focus img {
         outline:dotted;
     }
+    /*--------------------------
+    ## Galleries
+    ---------------------------*/
+    .gallery {
+            margin: 1.5em 0;
+    }
+
+    .gallery-item {
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            width: 100%;
+            padding: 1em;
+    }
+    .gallery-item img {
+            display: block;
+    }
+
+    .gallery-item a {
+            display: inline-block;
+            border-bottom: none;
+    }
+
+    .gallery-item a:hover,
+    .gallery-item a:focus {
+            border-bottom: none;
+            box-shadow: none;
+    }
+
+    .gallery-item a img {
+            padding: .5em;
+            margin: 0 auto;
+            border: 1px solid #fff;
+    }
+
+    .gallery-item a:hover img,
+    .gallery-item a:focus img {
+            border-color: #c3c3c3;
+    }
+    .gallery-columns-2 .gallery-item {
+            max-width: 50%;
+    }
+
+    .gallery-columns-3 .gallery-item {
+            max-width: 33.33%;
+    }
+
+    .gallery-columns-4 .gallery-item {
+            max-width: 25%;
+    }
+
+    .gallery-columns-5 .gallery-item {
+            max-width: 20%;
+    }
+
+    .gallery-columns-6 .gallery-item {
+            max-width: 16.66%;
+    }
+
+    .gallery-columns-7 .gallery-item {
+            max-width: 14.28%;
+    }
+
+    .gallery-columns-8 .gallery-item {
+            max-width: 12.5%;
+    }
+
+    .gallery-columns-9 .gallery-item {
+            max-width: 11.11%;
+    }
+
+    .gallery-caption {
+            display: block;
+            margin: 0;
+            font-family: "Fira Sans", sans-serif;
+            border: none;
+    }
+
+    .gallery-caption::before {
+            content: "";
+    }
+    /*-----------------------------
+    # Footer
+    ------------------------------*/
+
+    .site-footer {
+        padding: 6em 1em;
+        font-family: 'Fira Sans', sans-serif;
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+    }
+    .site-footer a {
+        color: #fff;
+    }
 } 
    /**********************************************************************
      iPhone 4 Landscape DESIGN STYLES 
@@ -1694,9 +1739,9 @@ object {
         margin-top:-1.8em;
     }
    }
-    /*******************************
+    /*******************************************************************
      LARGE PHONE DESIGN STYLES 
-    ******************************/
+    ********************************************************************/
     @media screen and (min-width:640px) {
         /*-------------------------------
         ## Header
@@ -1746,9 +1791,9 @@ object {
 	}
     }
 
-    /*******************************
+    /************************************************************************
      TABLET PORTRAIT DESIGN STYLES 
-    ******************************/
+    *************************************************************************/
     @media screen and (min-width:767px){
         /*-------------------------------
         ## Header
@@ -1819,7 +1864,7 @@ object {
         }
     }
     
-    /* ******************************************* */
+    /* *************************************** */
 /* **************** Post Meta **************** */
 /* ******************************************* */
     /* Conditions for no-sidebar layout */
@@ -1834,9 +1879,9 @@ object {
 	}
 }
 
-    /******************************
+    /*****************************************************************************
      TABLET LANDSCAPE DESIGN STYLES 
-    ******************************/
+    ******************************************************************************/
     @media screen and (min-width:1023px) {
         /*-------------------------------
         ## Header
@@ -1929,9 +1974,9 @@ object {
 	}
 
 }
-    /******************************
+    /*********************************************************************
      sMALL LAPTOP / DESKTOP DESIGN STYLES 
-    ******************************/
+    **********************************************************************/
     @media screen and (min-width:1200px) {
          /*-------------------------------
         ## Header
@@ -2006,9 +2051,9 @@ object {
 		padding-right: 1em;
 		padding-left: 1em;
 	}*/
-    /******************************
+    /**************************************************************************
      LARGE LAPTOP / DESKTOP DESIGN STYLES 
-    *****************************/
+    ***************************************************************************/
    @media screen and (min-width:1600px) {
        /*-------------------------------
         ## Header
