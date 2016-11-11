@@ -41,8 +41,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
         ## Captions
         ## Galleries
 ##BEGIN CUSTOM MOBILE STYLES
-    ## Phone Styles (breakpoints)
+## Phone Styles (breakpoints)
+## Header
     ## Menus
+## 
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -640,14 +642,188 @@ a:active {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+#secondary {
+	position: relative;
+	padding: 1.8em 1.4em 0;
+	background-color: #ededed;
+}
+
 .widget {
-    margin: 0 0 1.5em;
+	margin: 0 0 1.5em;
+	padding: 1.8em;
+	background: #fff;
+}
+.widget-title {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+.widget ul,
+.widget ol {
+	padding: .7em 0 0;
+	margin: 0;
+	font-family: "Fira Sans", sans-serif;
+	list-style-type: none;
+}
+
+.site-content .widget li {
+	display: block;
+	padding: .3em 0;
+}
+
+.widget li ul,
+.widget li ol {
+	margin-left: .5em;
+}
+
+.widget li:last-child {
+	padding-bottom: .35em;
+}
+.widget a {
+	font-weight: 700;
+	text-decoration: none;
+	font-size: .9em;
+}
+
+.widget a:hover,
+.widget a:focus {
+	text-decoration: underline;
 }
 
 /* Make sure select elements fit in widgets. */
 .widget select {
-    max-width: 100%;
+	width: 100%;
+	padding: .5em;
 }
+/* Archive and Categories widgets */
+
+.widget_archive li {
+	color: #808080;
+}
+
+.widget_categories .children {
+	padding-top: 0;
+	padding-bottom: .5em;
+}
+
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+/* Pages and Menu widgets */
+
+.widget_pages .children,
+.widget_nav_menu .sub-menu {
+	padding-top: 0;
+	padding-bottom: .5em;
+}
+
+.widget_pages a,
+.widget_nav_menu a{
+	display: block;
+	padding: 1em 0;
+	border-bottom: 1px solid #c3c3c3;
+}
+
+.site-content .widget_pages li,
+.site-content .widget_nav_menu li{
+	padding: 0;
+}
+
+.site-content .widget_pages li:last-child,
+.site-content .widget_nav_menu li:last-child{
+    margin-bottom: .5em;
+}
+
+/* Meta widget */
+.site-content .widget_meta li {
+	padding: .3em 0;
+}
+
+/* RSS widget */
+
+
+.widget_rss li {
+	margin-bottom: 1em;
+}
+.widget li a.rsswidget {
+	padding-right: .5em;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+.rss-date,
+.widget_rss cite {
+	color: #333;
+	font-size: .8em;
+}
+
+.rssSummary {
+	padding: .5em 0;
+	font-family: "Merriweather", serif;
+	font-size: .8em;
+    line-height: 1.4em;
+}
+
+/* Search widget */
+
+.widget_search input[type="search"] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: .5em 1em;
+	border: 1px solid #c3c3c3;
+	border-radius: 0;
+}
+
+/* Calendar widget */
+
+.widget_calendar {
+	font-family: "Fira Sans", sans-serif;
+}
+
+.widget_calendar caption {
+	padding: .5em 0;
+	font-size: 1em;
+	font-weight: 700;
+	text-align: left;
+}
+
+.widget_calendar thead {
+	background: #333;
+	color: #fff;
+}
+
+.widget_calendar thead th {
+	border-bottom-width: 2px;
+}
+
+.widget_calendar td {
+	padding: .2em;
+	font-size: .8em;
+	text-align: center;
+	background: #d6d6d6;
+	border: 3px solid white;
+}
+
+.widget_calendar th {
+	border: none;
+}
+
+.widget_calendar .pad {
+	background: #eaeaea;
+}
+
+/* Text widget */
+
+.textwidget {
+	font-size: .8em;
+	line-height: 1.6em;
+}
+
 
 /*--------------------------------------------------------------
 # Content
@@ -802,9 +978,9 @@ object {
 /*******************************/
 /*## Phone Styles (breakpoints)*/
 /*******************************/
-/*********************************/
-    /* MOBILE GLOBAL DESIGN STYLES */
-    /*********************************/
+/*-------------------------------
+# Header
+---------------------------------*/
 @media screen and (min-width: 300px){
     /*HEADER STYLES ************/
     .site-header {

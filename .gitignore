@@ -6,7 +6,7 @@ nbproject
 .htaccess
 web.config
 wp-config.php
-wp-content/plugins/
+
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
