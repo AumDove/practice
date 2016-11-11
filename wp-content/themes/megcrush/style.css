@@ -34,6 +34,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Clearings
 # Widgets
 # Content
+        
         ## Posts and pages
         ## Comments
 # Infinite scroll
@@ -42,8 +43,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
         ## Galleries
 ##BEGIN CUSTOM MOBILE STYLES
 ## Phone Styles (breakpoints)
-## Header
-    ## Menus
+    ## Header
+    ## Global
+    ## Indexes
+    ## Posts and pages
+    ## Post meta
+    ## Asides
+    ## Comments
+    ## Images
+## Menus
 ## 
 --------------------------------------------------------------*/
 
@@ -828,37 +836,9 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-.sticky {
-    display: block;
-}
 
-.hentry {
-    margin: 0 0 1.5em;
-}
 
-.byline,
-.updated:not(.published) {
-    display: none;
-}
 
-.single .byline,
-.group-blog .byline {
-    display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-    margin: 1.5em 0 0;
-}
-
-.page-links {
-    clear: both;
-    margin: 0 0 1.5em;
-}
 
 /*--------------------------------------------------------------
 ## Comments
@@ -904,27 +884,8 @@ object {
     max-width: 100%;
 }
 
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
-.wp-caption {
-    margin-bottom: 1.5em;
-    max-width: 100%;
-}
 
-.wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.wp-caption .wp-caption-text {
-    margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-    text-align: center;
-}
 
 /*--------------------------------------------------------------
 ## Galleries
@@ -978,11 +939,11 @@ object {
 /*******************************/
 /*## Phone Styles (breakpoints)*/
 /*******************************/
-/*-------------------------------
-# Header
----------------------------------*/
+
 @media screen and (min-width: 300px){
-    /*HEADER STYLES ************/
+    /*-------------------------------
+    ## Header
+    ---------------------------------*/
     .site-header {
         background-size:cover;
         background-position: center center;
@@ -1091,25 +1052,708 @@ object {
     button.menu-toggle {
         font-size: .75em;
     }
-}
-   /*******************************
-     iPhone 4 Landscape DESIGN STYLES 
-    ******************************/
-   @media screen and (width:480px) and (height:320px) {
+    /*-------------------------------
+    ## Global
+    ---------------------------------*/
 
-        
+    .content-area {
+        overflow-x: hidden;
+    }
+    .site-main {
+        margin: 1.4em;
+        font-size:.8em;
+        line-height:1.6em;
+     }
+    /*-------------------------------
+    ## Indexes
+    ---------------------------------*/
+    .page-title {
+    text-align:center;
+    font-style: italic;
+    font-size: 1.4em;
+    }
+    .page-header:after {
+        display:block;
+        content:"";
+        width:3.5em;
+        border-bottom: 1px solid #c3c3c3;
+        margin: 2em auto;
+    }
+    .archive-description {
+        margin-top: 1.5em;
+        border: 1px solid #c3c3c3;
+        padding: .5em 1.8em 0;
+        text-align: center;
+        font-style: italic;
+    }
+    .entry-title.index-excerpt {
+        margin-top: 2em;
+        margin-bottom: .5em;
+        font-size: 1.5em;
+    }
+    .entry-header .index-entry-meta {
+        font-size: .8em;
+    }
+    .entry-content.index-excerpt {
+        margin-top: .3em;
+    }
+    .continue-reading {
+	text-align: center;
+    }
+
+    .continue-reading a,
+    .entry-content .continue-reading a {
+            display: inline-block;
+            margin: 1em auto;
+            padding: 1em 2em;
+            font-family: "Fira Sans", sans-serif;
+            text-decoration: none;
+            border: 1px solid #c3c3c3;
+    }
+
+    .continue-reading a:hover,
+    .continue-reading a:focus,
+    .entry-content .continue-reading a:hover,
+    .entry-content .continue-reading a:focus {
+            border-color: #000;
+            border-width: 1px;
+            box-shadow: none;
+    }
+
+    .continue-reading a::after {
+            content: "…"
+    }
+    .continue-reading::after {
+            display: block;
+        content: "";
+        width: 7em;
+        border-bottom: 1px solid #c3c3c3;
+        margin: 4em auto 0;
+    }
+
+    .entry-content .continue-reading::after {
+            display: none;
+    }
+
+    .error-404 input[type="search"],
+    .search-no-results input[type="search"] {
+            width: 100%;
+            margin-bottom: 4em;
+            padding: .5em 1em;
+            box-sizing: border-box;
+    }
+
+    .error-404 .search-submit,
+    .search-no-results .search-submit {
+            clip: rect(1px, 1px, 1px, 1px);
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+    }
+    /*-------------------------------
+    ## Posts and pages
+    ---------------------------------*/
+    .entry-content a,
+    .entry-content a,
+    .entry-summary a,
+    .entry-summary a {
+            text-decoration: none;
+            border-bottom: 2px solid #c3c3c3;
+    }
+
+    .entry-content a:hover,
+    .entry-content a:focus,
+    .entry-summary a:hover,
+    .entry-summary a:focus {
+            border-bottom: 3px solid #c3c3c3;
+            box-shadow: inset 0 -3px 0 #c3c3c3;
+    }
+
+    .entry-meta a,
+    .entry-footer a {
+            text-decoration: none;
+    }
+
+    .entry-meta a:hover,
+    .entry-meta a:focus,
+    .entry-footer a:hover,
+    .entry-footer a:focus {
+            border-bottom: 2px solid #000;
+    }
+
+    .sticky {
+            position: relative;
+            display: block;
+    }
+    .sticky::before {
+        position: absolute;
+        top: -1.5em;
+        right: 0;
+        display: block;
+        font-family: "FontAwesome";
+        content: "\f08d";
+    }
+    .hentry {
+            margin: 0 0 1.5em;
+            padding-bottom: 2em;
+    }
+
+    .single .hentry,
+    .page .hentry {
+            padding-bottom: 0;
+    }
+
+    .entry-title {
+            margin-top: 2em;
+            margin-bottom: 1em;
+            font-size: 2em;
+            line-height: 1.3em;
+            text-align: center;
+            color: #000;
+            word-wrap: break-word; /* Catch and wrap very long words on small screens */
+    }
+    .entry-title a {
+	color: inherit;
+	text-decoration: none;
+    }
+
+    .entry-title a:hover,
+    .entry-title a:focus {
+            text-decoration: underline;
+    }
+
+    .deck {
+        margin-bottom: 2.5em;
+    }
+    .deck p {
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        font-weight: 600;
+    }
+    /*-------------------------------
+    ## Post meta
+    ---------------------------------*/
+    .entry-meta {
+        margin: 0 -1.473684210526316em;
+        padding: 2em 1.473684210526316em;
+	font-family: "Fira Sans", sans-serif;
+	font-size: 95%;
+	font-style: italic;
+	text-align: center;
+	background: #eee;
+    }
+    .author-avatar {
+	height: 50px;
+	width: 50px;
+	margin: 0 auto 1em;
+}
+
+    .author-avatar img {
+            border-radius: 50%;
+    }
+    .byline,
+    .posted-on,
+    .entry-meta .comments-link {
+            display: block;
+            padding:  0;
+    }
+
+    .entry-meta a {
+            font-weight: 700;
+    }
+
+    .byline,
+    .updated:not(.published) {
+            display: none;
+    }
+
+    .single .byline,
+    .group-blog .byline {
+            display: inline;
+    }
+
+    .page-content,
+    .entry-content,
+    .entry-summary {
+            margin: 1.5em 0 0;
+    }
+
+    .page-links {
+            clear: both;
+            margin: 0 0 1.5em;
+    }
+    .site-content li {
+            line-height: 1.6em;
+            padding-top: .5em;
+            padding-bottom: .5em;
+    }
+
+    .site-content li > ul {
+            margin-bottom: -1em;
+    }
+
+    .site-content li:last-child {
+            margin-bottom: 0;
+    }
+
+    .deck,
+    .entry-content {
+            margin: 1.5em 0 0;
+    }
+    .entry-footer::before,
+    .entry-footer::after {
+            display: block;
+            content: "";
+            width: 7em;
+            border-bottom: 1px solid #c3c3c3;
+            margin: 2em auto;
+    }
+
+    .entry-footer::before {
+            width: 3.5em;
+    }
+
+    .entry-footer,
+    .index-entry-meta {
+            font-family: "Fira Sans", sans-serif;
+            font-size: 95%;
+            font-style: italic;
+            text-align: center;
+    }
+    .entry-footer span {
+	margin: .5em 0;
+    }
+
+    .entry-footer span::after {
+            content: "|";
+            padding: 0 1em;
+    }
+
+    .entry-footer span:last-of-type::after {
+            content: "";
+            padding: 0;
+    }
+
+    .entry-footer span a,
+    .index-entry-meta a {
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+    }
+    /*----------------------------
+    ## Asides
+    ------------------------------*/
+    .blog .format-aside .entry-title,
+    .archive .format-aside .entry-title {
+            display: none;
+    }
+    /*----------------------------
+    ## Comments
+    ------------------------------*/
+    .comments-area {
+	margin: 4em 0;
+    }
+    .comments-title {
+	margin-bottom: 2em;
+	font-size: 2em;
+	text-align: center;
+    }
+
+    .comment-list {
+            padding: 0;
+            margin: 0;
+    }
+
+    .comment-list,
+    .comment-list ol {
+            list-style-type: none;
+    }
+
+    .comment-body {
+            border-bottom: 1px solid #c3c3c3;
+            margin-bottom: 3em;
+    }
+
+    .comment-meta {
+            position: relative;
+            margin-left: 70px;
+            font-family: "Fira Sans", sans-serif;
+            font-style: italic;
+            font-size: 80%;
+    }
+
+    .comment .avatar {
+            position: absolute;
+            left: -70px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+    }
+
+    .children {
+            margin-left: 1em;
+            padding-left: 0;
+    }
+
+    .comment .avatar {
+            top: -5px;
+    }
+    .comment-meta a {
+	text-decoration: none;
+    }
+
+    .comment-meta a:hover,
+    .comment-meta a:focus {
+            border-bottom: 2px solid #000;
+    }
+
+    .comment-metadata a:hover,
+    .comment-metadata a:focus {
+            border-color: #c3c3c3;
+    }
+
+    .comment-author {
+            font-size: 1.4em;
+            line-height: 1.3em;
+    }
+
+    .says {
+            font-size: 80%;
+    }
+
+    .comment-metadata {
+        margin-top: .2em;
+            padding-bottom: .5em;
+            font-size: .8em;
+            line-height: 1em;
+    }
+
+    .comment-metadata a {
+            color: #808080;
+    }
+
+    .reply {
+            margin-bottom: 1.5em;
+            text-align: right;
+    }
+
+    .reply a {
+            display: inline-block;
+            padding: .5em 1.4em;
+            font-family: "Fira Sans", sans-serif;
+            font-size: 85%;
+            color: #333;
+            line-height: 1.3em;
+            text-decoration: none;
+            border: 1px solid #c3c3c3;
+    }
+
+    .reply a:hover,
+    .reply a:focus {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+    }
+
+    .comment-content ol {
+            list-style-type: decimal;
+    }
+
+    .comment-content a {
+            word-wrap: break-word;
+    }
+
+    .bypostauthor .avatar {
+            box-sizing: content-box;
+            border: 5px solid #c3c3c3;
+            margin-top: -5px;
+            margin-left: -5px;
+    }
+
+    /* Comment Form */
+
+    .comment-respond::after {
+            display: block;
+            margin: 2em auto 4em;
+            content: "";
+            width: 5em;
+            border-bottom: 1px solid #c3c3c3;
+    }
+
+    .comment-reply-title {
+            margin-bottom: 1em;
+            text-align: center;
+    }
+
+    .comment-list .comment-reply-title {
+            text-align: left;
+    }
+
+    .comment-form {
+            font-family: "Fira Sans", sans-serif;
+            line-height: 1.3em;
+    }
+
+    .comment-form a {
+            font-weight: 500;
+    }
+
+    .comment-form .form-submit {
+            margin-top: 3em;
+    }
+
+    .comment-form .form-submit input {
+            padding: .5em 1.4em;
+            font-size: 85%;
+        color: #333;
+        line-height: 1.3em;
+        text-decoration: none;
+        border: 1px solid #c3c3c3;
+    }
+
+    .comment-form .form-submit input:hover,
+    .comment-form .form-submit input:focus {
+            border-color: #000;
+            color: #fff;
+            background-color: #000;
+    }
+
+    .comment-form label {
+            width: 33%;
+    }
+    .comment-form .required {
+            color: #D54E21;
+    }
+
+    .comment-form label {
+            display: block;
+            font-style: italic;
+            padding-bottom: .4em;
+    }
+    /*------------------------------
+    ## Captions
+    --------------------------------*/
+    .wp-caption {
+	font-family: "Fira Sans", sans-serif;
+	font-style: italic;
+	max-width: 100%;
+    }
+
+    .wp-caption .aligncenter {
+            margin-top: 2em;
+            margin-bottom: 2em;
+    }
+
+    .wp-caption.alignright,
+    .wp-caption.alignleft {
+            margin-top: 0;
+            margin-bottom: 1.5em;
+    }
+
+    .wp-caption em {
+            font-style: normal; /* Inverse emphasis because of all italics */
+    }
+
+    .wp-caption img[class*="wp-image-"] {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+    }
+
+    .wp-caption-text {
+            display: block;
+            position: relative;
+            margin: 1.5em 0 2em 2em;
+            padding: 0 1em .5em;
+            font-size: 90%;
+            color: #333;
+            border-right: 1px solid #c3c3c3;
+            border-bottom: 1px solid #c3c3c3;
+    }
+
+    .wp-caption-text::before {
+            position: absolute;
+            top: -3px;
+            left: -1.4em;
+            display: block;
+            font-family: "FontAwesome";
+            font-style: normal;
+            color: #808080;
+            content: "\f148";
+            transform: rotate(90deg);
+    }
+
+    .aligncenter .wp-caption-text,
+    .alignnone .wp-caption-text {
+            margin-left: 30%;
+            margin-bottom: 2em;
+    }
+
+    .alignright .wp-caption-text,
+    .alignleft .wp-caption-text {
+            margin-top: 1em;
+            margin-bottom: 1em;
+    }
+    /*--------------------------
+    ## Images
+    ----------------------------*/
+
+    img.aligncenter {
+            margin-top: 2em;
+            margin-bottom: 2em;
+    }
+
+    img.alignright,
+    img.alignleft {
+            margin-bottom: 1.5em;
+    }
+    .featured-image,
+    .centered-image {
+            max-width: calc(100% + 2.8em);
+            margin: 1.5em -1.4em;
+    }
+    .featured-image {
+        margin-top: -1.4em;
+        margin-bottom: -1.2em;
+    }
+    .featured-image img {
+        display:block;
+        margin: 0 auto;
+
+    }
+    .featured-image a:hover img,
+    .featured-image a:focus img {
+        outline:dotted;
+    }
+} 
+   /**********************************************************************
+     iPhone 4 Landscape DESIGN STYLES 
+    *********************************************************************/
+   @media screen and (min-width:480px){
+        .site-main {
+            margin: 1.8em;
+        }
+        .entry-title.index-excerpt {
+            margin-top: 1.5em;
+            font-size: 2em;
+        }
+        .index-entry-meta {
+            font-size: 1em;
+	}
+
+	.index-entry-meta .byline,
+	.index-entry-meta .posted-on,
+	.index-entry-meta .comments-link {
+            display: inline-block;
+	}
+
+	.index-entry-meta .byline::after,
+	.index-entry-meta .comments-link::before {
+            content: "|";
+            padding: 0 1em;
+	}
+    /*-------------------------------
+    ## Post meta
+    ---------------------------------*/
+        .entry-meta {
+		margin: 0 -1.894736842105263em;
+	}
+         /*----------------------------
+        ## Comments
+        ------------------------------*/
+         .children {
+		margin-left: 2em;
+	}
+
+	.comment-meta {
+		margin-left: 80px;
+		font-size: 90%;
+	}
+
+	.comment .avatar {
+		top: -7px;
+		left: -80px;
+		width: 60px;
+		height: 60px;
+	}
+
+	.comment-content {
+		margin-left: 80px;
+	}
+        /*--------------------------
+        ## Images
+        ----------------------------*/
+        .featured-image,
+	.centered-image {
+		max-width: calc(100% + 3.6em);
+		margin: 1.5em -1.8em;
+	}
+        .featured-image {
+        margin-top:-1.8em;
+    }
    }
     /*******************************
      LARGE PHONE DESIGN STYLES 
     ******************************/
-    @media screen and (min-width:375px) {
+    @media screen and (min-width:640px) {
+        /*-------------------------------
+        ## Header
+        ---------------------------------*/
+        .site-main {
+            font-size: 1em;
+        }
+        /*-------------------------------
+        ## Posts and pages
+        ---------------------------------*/
+        .entry-title {
+		margin-top: 1.5em;
+		font-size: 2.8em;
+		line-height: 1.3em;
+	}
+         /*-------------------------------
+        ## Post meta
+        ---------------------------------*/
+        .entry-footer {
+		padding: 0 1.5em;
+	}
+        /*----------------------------
+        ## Comments
+        ------------------------------*/
+        .children {
+		margin-left: 3em;
+	}
 
+	.comments-area {
+		margin: 4em 3em;
+		font-size: 1.1em;
+	}
+
+	.comment-meta {
+		margin-left: 90px;
+	}
+
+	.comment .avatar {
+		top: -8px;
+		left: -90px;
+		width: 70px;
+		height: 70px;
+	}
+
+	.comment-content {
+		margin-left: 90px;
+	}
     }
 
     /*******************************
      TABLET PORTRAIT DESIGN STYLES 
     ******************************/
     @media screen and (min-width:767px){
+        /*-------------------------------
+        ## Header
+        ---------------------------------*/
+        
         .site-title {
             font-size:4em;
         }
@@ -1122,24 +1766,176 @@ object {
         .site-branding {
              margin: 8em 0;
          }
+        /*-------------------------------
+          ## Global
+        ---------------------------------*/
+        .site-main {
+             max-width: 45em;
+             margin: 1.8em auto;
+        }
+        /*-------------------------------
+          ## Post meta
+        ---------------------------------*/
+        .has-avatar {
+		display: inline-block;
+		text-align: left;
+		width: 20em;
+	}
+	
+	.author-avatar {
+		height: 70px;
+		width: 70px;
+		float: left;
+		margin-right: 1.5em;
+		margin-bottom: 0;
+	}
+        .deck,
+	.entry-content {
+		padding: 0 3em;
+	}
+         /*----------------------------
+        ## Comments
+        ------------------------------*/
+         /*--------------------------
+        ## Images
+        ----------------------------*/
+         img.alignright,
+	.wp-caption.alignright {
+		margin-right: -1.5em;
+	}
+	
+	img.alignleft,
+	.wp-caption.alignleft {
+		margin-left: -1.5em;
+	}
+	.featured-image,
+	.centered-image {
+		max-width: calc(100% + 6em);
+		margin-right: -3em;
+		margin-left: -3em;
+	}
+        .featured-image {
+            margin-top: 3em;
+        }
     }
+    
+    /* ******************************************* */
+/* **************** Post Meta **************** */
+/* ******************************************* */
+    /* Conditions for no-sidebar layout */
+    @media screen and (min-width: 57em) {
+	.entry-meta {
+		position: relative;
+		width: 100%;
+		width: 100vw;
+		left: 0;
+		left: calc((-100vw + 52.2em) / 2);
+		overflow: hidden;
+	}
+}
+
     /******************************
      TABLET LANDSCAPE DESIGN STYLES 
     ******************************/
     @media screen and (min-width:1023px) {
+        /*-------------------------------
+        ## Header
+        ---------------------------------*/
+        
         .site-title {
             font-size:4em;
         }
         .site-description{
             font-size: 175%;
         }
-    }
+        /*-------------------------------
+          ## Global
+        ---------------------------------*/
+        /* Sidebar Right layouts */
+	.sidebar-right .content-area {
+		float: left;
+		width: calc(100% - 306px);
+	}
 
+	.sidebar-right #secondary {
+		margin: 0;
+	}
+
+	.sidebar-right .site-content .widget-area {
+		float: right;
+		overflow: hidden;
+		width: 17em;
+		padding: 0 1.5em;
+		border-left: 1px solid #ededed;
+	}
+
+	/* Sidebar Left layouts */
+	.sidebar-left .content-area {
+		float: right;
+		width: calc(100% - 306px);
+	}
+
+	.sidebar-left #secondary {
+		margin: 0;
+	}
+
+	.sidebar-left .site-content .widget-area {
+		float: left;
+		overflow: hidden;
+		width: 17em;
+		padding: 0 1.5em;
+		border-right: 1px solid #ededed;
+	}
+	
+	/* Unified styles */
+	.sidebar-right #secondary,
+	.sidebar-left #secondary {
+		background-color: #fff;
+		padding: 1.8em 0 0;
+		margin: 0;
+	}
+	
+	.sidebar-right .widget,
+	.sidebar-left .widget {
+		padding: 0 1.8em;
+		margin-bottom: 0;
+	}
+	
+	.sidebar-right .widget::after,
+	.sidebar-left .widget::after {
+		display: block;
+		width: 33%;
+		margin: 4em auto;
+		content: "";
+		border-bottom: 1px solid #c3c3c3;
+	}
+        /*-------------------------------
+        ## Post meta
+        ---------------------------------*/
+        /* Conditions for sidebar-right layout */
+        .sidebar-right .entry-meta {
+		width: 100%;
+		width: calc(100vw - 306px);
+		left: 0;
+		margin: 0;
+	}
+        /* Conditions for sidebar-left layout */
+        .sidebar-left .entry-meta {
+		width: 100%;
+		width: calc(100vw - 306px);
+		left: 0;
+		right: 0;
+		margin: 0;
+	}
+
+}
     /******************************
      sMALL LAPTOP / DESKTOP DESIGN STYLES 
     ******************************/
     @media screen and (min-width:1200px) {
-         /*HEADER STYLES ***********/
+         /*-------------------------------
+        ## Header
+        ---------------------------------*/
         button.menu-toggle {
              font-size: 1.25em;
          }
@@ -1170,14 +1966,55 @@ object {
             text-align: center;
             line-height: 1.8em;
         }
-        
-    }
+        /*-------------------------------
+          ## Global
+        ---------------------------------*/
+        /*-------------------------------
+        ## Post meta
+        ---------------------------------*/
+        /* Conditions for sidebar-right layout */
+        .sidebar-right .entry-meta {
+		left: calc((-100vw + 66.2em) / 2);
+	}
+        /* Conditions for sidebar-left layout */
+        .sidebar-left .entry-meta {
+		width: 100%;
+		width: calc(100vw - 306px);
+		left: 0;
+		right: 0;
+		margin: 0;
+	}
+        .sidebar-left .entry-meta {
+		left: calc((-100vw + 66.2em) / 2);
+	}
+   
     
+        
+
+        img.alignright,
+	.wp-caption.alignright {
+		margin-right: -3em;
+	}
+	img.alignleft,
+	.wp-caption.alignleft {
+		margin-left: -3em;
+	}
+    }
+/*    @media screen and (min-width: 65em) and (max-width: 70em) {
+	.sidebar-right .entry-title,
+	.sidebar-left .entry-title {
+		padding-right: 1em;
+		padding-left: 1em;
+	}*/
     /******************************
      LARGE LAPTOP / DESKTOP DESIGN STYLES 
     *****************************/
    @media screen and (min-width:1600px) {
-         .site-title {
+       /*-------------------------------
+        ## Header
+        ---------------------------------*/ 
+       
+       .site-title {
              font-size:4.25em;
          }
          .site-description {
@@ -1218,6 +2055,9 @@ object {
             text-align: center;
             line-height: 1.8em;
         }
+        /*-------------------------------
+          ## Global
+        ---------------------------------*/
     }
     /*******************************
      TV / LARGE SCREEN DESIGN STYLES 
@@ -1420,7 +2260,7 @@ object {
         display: block;
     }
 /* UNCOMMENT TO SHOW DESKTOP HORIZONTAL MENU*/
-    @media screen and (min-width: 50em) {
+    @media screen and (min-width: 768px) {
             .menu-toggle {
                     display: none;
             }
@@ -1429,7 +2269,7 @@ object {
             }
     }
 
-    @media screen and (min-width: 50em) {
+    @media screen and (min-width: 768px) {
             .menu-toggle {
                     display: none;
             }
@@ -1438,7 +2278,7 @@ object {
             }
     }
      /*Horizontal menu on wide screens*/ 
-    @media screen and (min-width: 50em) {
+    @media screen and (min-width: 768px) {
             
              /*Position the menu in the header*/ 
           .main-navigation,
