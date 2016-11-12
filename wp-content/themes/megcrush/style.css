@@ -164,7 +164,7 @@ svg:not(:root) {
 }
 
 figure {
-    margin: 1em 40px;
+    margin: 0;
 }
 
 hr {
@@ -237,9 +237,14 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 
+input[type="search"] {
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+}
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 fieldset {
@@ -268,7 +273,8 @@ table {
 
 td,
 th {
-    padding: 0;
+    border: 1px solid #999;
+    padding: 0.5em;
 }
 
 /*--------------------------------------------------------------
@@ -279,8 +285,8 @@ button,
 input,
 select,
 textarea {
-    color: #404040;
-    font-family: sans-serif;
+    color: #000;
+    font-family: 'Merriweather', serif;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5;
