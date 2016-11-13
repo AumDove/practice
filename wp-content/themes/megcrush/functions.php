@@ -80,7 +80,7 @@ function megcrush_setup() {
         /**
          * Add editor styles
          */
-        add_editor_style( array ( 'inc/editor-style.css', 'fonts/custom-fonts.css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css') );
+        add_editor_style( array ( 'inc/editor-style.css', 'fonts/custom-fonts.css', 'fonts/font-awesome/fonts') );
         
         
 }
@@ -124,11 +124,13 @@ function megcrush_scripts() {
 	wp_enqueue_style( 'megcrush-style', get_stylesheet_uri() );
 
         // Add Google Fonts: Fira Sans and Merriweather
-       // wp_enqueue_style( 'meg-google-fonts', 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Merriweather:400,400i,700,700i' );
-        wp_enqueue_style( 'megcrush-local-fonts', get_template_directory_uri() . '/fonts/custom-fonts.css');
+
+        wp_enqueue_style( 'megcrush-local-fonts', get_stylesheet_directory_uri() . '/fonts/custom-fonts.css');
         
         // Add Font Awesome icons (http://fontawesome.io) 
-	wp_enqueue_style( 'megcrush-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
+
+        wp_enqueue_style( 'megcrush-fontawesome-fonts', get_stylesheet_directory_uri() . '/fonts/font-awesome/fonts/');
+        wp_enqueue_style( 'megcrush-fontawesome-style', get_stylesheet_directory_uri() . '/fonts/font-awesome/css/font-awesome.css');
        
 	wp_enqueue_script( 'megcrush-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery'), '20151215', true );
         wp_localize_script( 'megcrush-navigation', 'screenReaderText', array(
