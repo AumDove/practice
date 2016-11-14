@@ -921,7 +921,7 @@ object {
     /*//box around title and description */
     .site-branding { 
         max-height:60vh;
-        background: #ffffff;
+        background-color: #000;
         padding: 1% 2%;
         opacity: .7;
         border-radius: 7px; 
@@ -2164,6 +2164,9 @@ object {
     /*--------------------------------------------------------------
     ## Menus
     --------------------------------------------------------------*/
+    #site-navigation.main-navigation {
+        opacity: .7;
+    }
     .main-navigation {
         clear: both;
         display: block;
