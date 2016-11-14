@@ -36,7 +36,8 @@ function megcrush_customize_register( $wp_customize ) {
 			)
 		)
 	);
-	
+
+       
 	// Add section to the Customizer
 	$wp_customize->add_section( 'megcrush-options', array(
 		'title' => __( 'Theme Options', 'megcrush' ),
@@ -71,7 +72,7 @@ function megcrush_customize_register( $wp_customize ) {
 	
     }
         
-        add_action( 'customize_register', 'megcrush_customize_register' );
+add_action( 'customize_register', 'megcrush_customize_register' );
 
         /**
          * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -79,7 +80,7 @@ function megcrush_customize_register( $wp_customize ) {
         function megcrush_customize_preview_js() {
                 wp_enqueue_script( 'megcrush_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
         }
-        add_action( 'customize_preview_init', 'megcrush_customize_preview_js' );
+add_action( 'customize_preview_init', 'megcrush_customize_preview_js' );
 /**
  * Sanitize layout options
  */
@@ -97,13 +98,14 @@ function megcrush_sanitize_layout( $value ) {
 
 function megcrush_customizer_css() {
 	$header_color = get_theme_mod('header_color');
-	
+//        $header_box_color = get_theme_mod('header_box_color');
 	?>
 <style type="text/css">
 	.site-header {
-		background-color: <?php echo $header_color; ?>
+            background-color: <?php echo $header_color; ?>
 	}
-</style>
+        </style>
+
 	<?php
 }
 add_action( 'wp_head', 'megcrush_customizer_css' );
