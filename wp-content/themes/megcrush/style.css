@@ -2160,7 +2160,8 @@ img.alignleft {
     /*--------------------------------------------------------------
     ## Menus
     --------------------------------------------------------------*/
-    #site-navigation.main-navigation {
+    #site-navigation.main-navigation,
+    header-box-color {
         opacity: .7;
     }
     .main-navigation {

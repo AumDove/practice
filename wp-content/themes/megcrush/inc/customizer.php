@@ -122,7 +122,7 @@ function megcrush_customizer_css() {
              .site-branding {
                 background-color: <?php echo $header_box_color; ?>
             }
-            nav#site-navigation.main-navigation {
+            .main-navigation{
                 background-color: <?php echo $header_box_color; ?>
             }
     </style>
