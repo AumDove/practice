@@ -25,7 +25,8 @@
             <?php if (get_header_image() ) { ?>
                <header id="masthead" class="site-header" style="background-image: url(<?php header_image(); ?>)" role="banner">
            <?php } else { ?>
-               <header id="masthead" class="site-header" role="banner" style="background-color: <?php echo $header_color; ?>" type="text/css">
+                      
+                       <header id="masthead" class="site-header" role="banner" style="background-color: <?php echo $header_color; ?>" type="text/css">
            <?php } ?>
         
 	<?php // Display site icon or first letter as logo ?>	
