@@ -50,7 +50,7 @@
          // Custom Header Box // Menu Background Color
 	wp.customize( 'header_box_color', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-branding, .main-navigation').css( {
+			$( '.site-branding, .nav-menu').css( {
 				'background-color': to 
 			});
 		} );

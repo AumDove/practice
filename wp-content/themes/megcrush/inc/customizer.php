@@ -121,14 +121,16 @@ function megcrush_customizer_css() {
                 background-color: <?php echo $header_color; ?>
             }
             .main-navigation a, .main-navigation a:hover, .main-navigation a:focus {
-                   
                     color: <?php echo $menu_textcolor; ?>
             }
             .site-branding {
                 background-color: <?php echo $header_box_color; ?>
             }
-            .main-navigation{
+            .nav-menu {
                 background-color: <?php echo $header_box_color; ?>
+            }
+            .main-navigation {
+                background-color: transparent;
             }
     </style>
         
