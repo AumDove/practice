@@ -36,25 +36,8 @@ function megcrush_customize_register( $wp_customize ) {
 			)
 		)
 	);
-        // Add setting to change color for header box behind site title and tagline
-        $wp_customize->add_setting( 'header_box_color', array(
-            'default' => '#000000',
-            'type' => 'theme_mod',
-            'sanitize_callback' => 'sanitize_hex_color',
-            'transport' => 'postMessage',
-        ));
-        
-        // Add control to change color for header box behind site title and tagline
-        $wp_customize->add_control (
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'header_box_color', array(
-                            'label' => __( 'Header Box Color' , 'megcrush'),
-                            'section' => 'colors',
-                        )
-                    )
-                );
-        
+
+       
 	// Add section to the Customizer
 	$wp_customize->add_section( 'megcrush-options', array(
 		'title' => __( 'Theme Options', 'megcrush' ),
@@ -114,19 +97,16 @@ function megcrush_sanitize_layout( $value ) {
  */
 
 function megcrush_customizer_css() {
+
 	$header_color = get_theme_mod('header_color');?>
 
     <style type="text/css">
             .site-header {
                 background-color: <?php echo $header_color; ?>
             }
-    </style>   
-        <?php $header_box_color = get_theme_mod('header_box_color');?>
-    <style type="text/css">
-            .site-branding, .main-navigation {
-                background-color: <?php echo $header_box_color; ?>
-            }    
+    
  <?php  
+
 }
     
 add_action( 'wp_head', 'megcrush_customizer_css' );
