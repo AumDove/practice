@@ -36,7 +36,23 @@ function megcrush_customize_register( $wp_customize ) {
 			)
 		)
 	);
-
+        // Create header box / menu background color setting
+	$wp_customize->add_setting( 'header_box_color', array(
+		'default' => '#424242',
+		'type' => 'theme_mod',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport' => 'postMessage',
+	));
+        // Add header box / menu background color control
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_box_color', array(
+				'label' => __( 'Header Box and Menu Color', 'megcrush' ),
+				'section' => 'colors',
+			)
+		)
+	);
        
 	// Add section to the Customizer
 	$wp_customize->add_section( 'megcrush-options', array(
@@ -97,13 +113,23 @@ function megcrush_sanitize_layout( $value ) {
  */
 
 function megcrush_customizer_css() {
-
-	$header_color = get_theme_mod('header_color');?>
-
+	$header_color = get_theme_mod('header_color');
+        $header_box_color = get_theme_mod('header_box_color');?>
     <style type="text/css">
             .site-header {
                 background-color: <?php echo $header_color; ?>
             }
+             .site-branding {
+                background-color: <?php echo $header_box_color; ?>
+            }
+            nav#site-navigation.main-navigation {
+                background-color: <?php echo $header_box_color; ?>
+            }
+    </style>
+        
+    <style type="text/css">
+           
+    </style>
     
  <?php  
 
