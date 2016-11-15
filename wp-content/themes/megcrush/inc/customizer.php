@@ -114,12 +114,16 @@ function megcrush_sanitize_layout( $value ) {
 
 function megcrush_customizer_css() {
 	$header_color = get_theme_mod('header_color');
-        $header_box_color = get_theme_mod('header_box_color');?>
+        $header_box_color = get_theme_mod('header_box_color');
+        $menu_textcolor = get_theme_mod('header_textcolor');?>
     <style type="text/css">
             .site-header {
                 background-color: <?php echo $header_color; ?>
             }
-            
+            .main-navigation a, .main-navigation a:hover, .main-navigation a:focus {
+                   
+                    color: <?php echo $menu_textcolor; ?>
+            }
             .site-branding {
                 background-color: <?php echo $header_box_color; ?>
             }
