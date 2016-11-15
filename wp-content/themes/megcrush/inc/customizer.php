@@ -114,19 +114,22 @@ function megcrush_sanitize_layout( $value ) {
  */
 
 function megcrush_customizer_css() {
-	$header_color = get_theme_mod('header_color');
-        $header_box_color = get_theme_mod('header_box_color');
-	?>
-<style type="text/css">
-	.site-header {
-            background-color: <?php echo $header_color; ?>
-	}
-</style>
-<style type="text/css">
-	.site-branding, .main-navigation {
-            background-color: <?php echo $header_box_color; ?>
-	}
-</style>
-	<?php
+	$header_color = get_theme_mod('header_color');?>
+
+    <style type="text/css">
+            .site-header {
+                background-color: <?php echo $header_color; ?>
+            }
+    </style>   
+        <?php $header_box_color = get_theme_mod('header_box_color');?>
+    <style type="text/css">
+            .site-branding, .main-navigation {
+                background-color: <?php echo $header_box_color; ?>
+            }    
+ <?php  
 }
+    
 add_action( 'wp_head', 'megcrush_customizer_css' );
+
+
+

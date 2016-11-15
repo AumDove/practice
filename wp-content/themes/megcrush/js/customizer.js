@@ -47,7 +47,14 @@
 			});
 		} );
 	} );
-
+         // Custom Header Box / Menu Background Color
+	wp.customize( 'header_box_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-branding').css( {
+				'background-color': to 
+			});
+		} );
+	} );
         // Custom Layout Options
         wp.customize( 'layout_setting', function( value ) {
 		value.bind( function( to ) {
